@@ -1,0 +1,88 @@
+
+ 
+#define REDPIN 9
+#define GREENPIN 10
+#define BLUEPIN 11
+ 
+#define FADESPEED 5   
+
+void setup() {
+  pinMode(REDPIN, OUTPUT);
+  pinMode(GREENPIN, OUTPUT);
+  pinMode(BLUEPIN, OUTPUT);
+}
+ 
+ 
+void loop() {
+  int r, g, b;
+ 
+  for (g = 255; g > 0; g--) { 
+    analogWrite(GREENPIN, g);
+    delay(random(3));
+  } 
+  for (r = 0; r < 256; r++) { 
+    analogWrite(REDPIN, r);
+    analogWrite(GREENPIN, g);
+    delay(random(2));
+  }
+ 
+
+  for (b = 255; b > 0; b--) { 
+    analogWrite(BLUEPIN, b);
+     analogWrite(REDPIN, r);
+    delay(random(2));
+  } 
+
+  for (g = 0; g < 256; g++) { 
+    analogWrite(GREENPIN, g);
+    analogWrite(BLUEPIN, b);
+    delay(random(3, 4));
+  } 
+  for (r = 255; r > 0; r--) { 
+    analogWrite(REDPIN, r);
+    delay(random(3, 5));
+  } 
+
+  for (b = 0; b < 256; b++) { 
+    analogWrite(BLUEPIN, b);
+    analogWrite(GREENPIN, g);
+    delay(random(4, 5));
+  } 
+
+  for (g = 255; g > 0; g--) { 
+    analogWrite(GREENPIN, g);
+    delay(random(4, 5));
+  } 
+    for (r = 255; r > 0; r--) { 
+    analogWrite(REDPIN, r);
+    delay(random(4, 5));
+  } 
+
+  for (b = 0; b < 256; b++) { 
+    analogWrite(BLUEPIN, b);
+    delay(random(3, 4));
+  } 
+
+  for (g = 255; g > 0; g--) { 
+    analogWrite(GREENPIN, g);
+    delay(random(3));
+  } 
+    for (b = 0; b < 256; b++) { 
+    analogWrite(BLUEPIN, b);
+    analogWrite(GREENPIN, g);
+    delay(random(2, 3));
+  }
+    for (g = 0; g < 256; g++) { 
+    analogWrite(GREENPIN, g);
+    analogWrite(BLUEPIN, b);
+    delay(random(2, 3));
+  } 
+  for (r = 255; r > 0; r--) { 
+    analogWrite(REDPIN, r);
+    delay(random(2, 3));
+  } 
+  
+
+ 
+
+}
